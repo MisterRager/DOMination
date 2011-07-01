@@ -1,4 +1,8 @@
 DOMination - Simple jQuery DOM Manipulation Library
+
+based on work by Michael Geary:
+
+    http://mg.to/2006/02/27/easy-dom-creation-for-jquery-and-prototype
 ===================================================
 
 The idea behind DOMination is pretty simple - just include it, and you can create jQuery DOM elements with functions named after the HTML tag which you want to create a node to represent.  It's a shorthand notation for $(some_html), essentially.
