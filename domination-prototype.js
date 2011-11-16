@@ -2,11 +2,11 @@
 	var _safeAttributeSet = function(_e, attr, val) { 
 		var lattr = attr.toLowerCase();
 		if (lattr === 'class') {
-		    _e.addClass(val);
+		    _e.addClassName(val);
 		} else if ((lattr === 'style') && (typeof(val) === "object")){
-			_e.css(val);
+			_e.setStyle(val);
 		} else if (lattr.substring(0, 7) === 'observe') {
-			_e.bind(attr.substring(7).toLowerCase(), val);
+            _e.observe(attr.substring(7).toLowerCase(), val);
 		} else {
 			/* fix some stupid IE capitalization bugs */
 			if (lattr === "rowspan") {
@@ -16,7 +16,7 @@
 			} else if (lattr === "frameborder") {
 				attr = "frameBorder";
 			}
-			_e.attr(attr, val);
+			_e.writeAttribute(attr, val);
 		}
 	};
 
@@ -33,7 +33,7 @@
 			}
 		}
 		var _e ;
-		if ($.browser.msie && (n === "input") && attrs.name) {
+		if ((n === "input") && navigator.appName === 'Microsoft Internet Explorer' && attrs.name) {
 			_e = document.createElement('<input name="' + attrs.name + '"/>');
 		} else {
 			_e = document.createElement(n);
@@ -48,11 +48,11 @@
 		}
 		for (var i = nodeStart; i <  node_args.length; ++i) {
 			if (typeof(node_args[i]) === 'function') {
-				_e.append(node_args[i]());
+				_e.insert(node_args[i]());
 			} else if ( (typeof(node_args[i]) === 'string') || (typeof(node_args[i]) === 'number')) {
-				_e.append(document.createTextNode(node_args[i]));
+				_e.insert(document.createTextNode(node_args[i]));
 			} else {
-				_e.append(node_args[i]);
+				_e.insert(node_args[i]);
 			}
 		}
 		return _e;
@@ -91,7 +91,7 @@
 	  var rv = bareLink.apply(this, args);
 	  if (callback) {
 		rv.click(function(e) { 
-			e.preventDefault();
+            Event.stop(e);
 			callback(); 
 			return false; 
 		});
