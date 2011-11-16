@@ -32,7 +32,7 @@ Elements that normally have click events bound to them can also be passed a func
 Requirements
 ------------
 
-* jQuery 1.3+
+* jQuery *or* MooTools *or* Prototype.js
 
 License: MIT
 ------------
