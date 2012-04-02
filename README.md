@@ -1,6 +1,6 @@
 DOMination - Simple jQuery DOM Manipulation Library
 
-based on work by Michael Geary:
+probably based on work by Michael Geary:
 
     http://mg.to/2006/02/27/easy-dom-creation-for-jquery-and-prototype
 ===================================================
@@ -37,7 +37,7 @@ Requirements
 License: MIT
 ------------
 
-Copyright (C) 2011 by Alan Rager
+Copyright (C) 2011 by Michael Lorton, Alan Rager
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
